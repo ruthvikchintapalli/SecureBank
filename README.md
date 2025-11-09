@@ -1,6 +1,10 @@
 # SecureBank – A Modern iOS Banking App (SwiftUI Demo)
 *Built with SwiftUI, Combine, Keychain, and Offline-First Architecture – Inspired by Chase & Wells Fargo*
 
+[![Swift 6](https://img.shields.io/badge/Swift-6-orange.svg)](https://swift.org)
+[![iOS 17+](https://img.shields.io/badge/iOS-17%2B-blue.svg)](https://developer.apple.com/ios/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ---
 
 ## Overview
@@ -48,3 +52,22 @@ It replicates core features of **Chase**, **Wells Fargo**, and **Zelle**, includ
 ---
 
 ## Project Structure
+
+```text
+SecureBank/
+├── SecureBankApp.swift                 # App entry
+├── Models/
+│   └── Account.swift
+├── Services/
+│   ├── AuthService.swift
+│   ├── KeychainHelper.swift
+│   └── BankDataService.swift
+├── Views/
+│   ├── LoginView.swift
+│   ├── DashboardView.swift
+│   ├── TransferView.swift
+│   ├── P2PTransferView.swift       # Zelle-style
+│   ├── ProfileView.swift
+│   └── MainTabView.swift
+├── README.md
+└── LICENSE
