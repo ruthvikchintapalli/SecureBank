@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject var authService: AuthService
+    @State private var showTransfer = false
     
     var body: some View {
         TabView {
@@ -10,21 +10,20 @@ struct MainTabView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            TransferView()
-                .tabItem {
-                    Label("Send", systemImage: "paperplane")
-                }
-            
-            P2PTransferView()
-                .tabItem {
-                    Label("Pay", systemImage: "arrow.up.right.circle")
-                }
+            Button("Transfer") {
+                showTransfer = true
+            }
+            .tabItem {
+                Label("Send", systemImage: "paperplane")
+            }
+            .sheet(isPresented: $showTransfer) {
+                TransferView()
+            }
             
             ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
         }
-        .accentColor(.blue)
     }
 }
